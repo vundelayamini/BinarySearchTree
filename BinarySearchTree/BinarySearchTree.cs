@@ -56,9 +56,36 @@ namespace BinarySearchTree
                 this.rightTree.Display();
             }
         }
+        //Using size method by getting size of binary search tree.
         public void GetSize()
         {
             Console.WriteLine("Size of binary search tree is " +" "+ (1 + this.leftCount + this.rightCount));
+        }
+        //Searching a node in Binary search tree.
+        public bool IfExists(T element, BinarySearchTree<T> node)
+        {
+            if (node == null)
+            {
+                return false;
+            }
+            if (node.NodeData.Equals(element))
+            {
+                Console.WriteLine("Element found in the binary search tree : " + node.NodeData);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Current node in BST is : " + node.NodeData);
+            }
+            if (element.CompareTo(node.NodeData) < 0)
+            {
+                IfExists(element, node.leftTree);
+            }
+            if (element.CompareTo(node.NodeData) > 0)
+            {
+                IfExists(element, node.rightTree);
+            }
+            return result;
         }
     }
 

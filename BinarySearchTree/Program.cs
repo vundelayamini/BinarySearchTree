@@ -7,7 +7,6 @@ namespace BinarySearchTree
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome Message To Binary Search Trees");
-            Console.WriteLine("Inserted nodes are : ");
             BinarySearchTree<int> binarySearchTree = new BinarySearchTree<int>(56);
             //Inserting nodes into binary search tree.
             binarySearchTree.InsertNode(30);
@@ -22,10 +21,16 @@ namespace BinarySearchTree
             binarySearchTree.InsertNode(16);
             binarySearchTree.InsertNode(63);
             binarySearchTree.InsertNode(67);
+
             //Display the binary binary search tree 
             binarySearchTree.Display();
+
             //Getting the size of Binary search tree
             binarySearchTree.GetSize();
+
+            //Searching a node in binary search tree.
+            bool result = binarySearchTree.IfExists(63, binarySearchTree);
+            Console.WriteLine(result);
 
         }
     }
